@@ -1,4 +1,4 @@
-//********8NUMBERS************/
+//********NUMBERS************/
 
 let numb=100;
 console.log(numb)
