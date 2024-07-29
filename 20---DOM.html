@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black; color: white;">
+    <div class="parent">
+        <div class="DAY">MON</div>
+        <div class="DAY">TUE</div>
+        <div class="DAY">WED</div>
+        <div class="DAY">THU</div>
+    </div>
+</body>
+<script>
+     const parent=document.querySelector('.parent')
+    console.log(parent)
+
+        //Parent to child relationship
+
+    console.log(parent.children)///gives the innner element of the parent element in the HTML COLLECTION[basically the array format so we can loop through them]
+    console.log(parent.children[0].innerText)//thi swill desplays the content inside the element
+
+    for (let index = 0; index < parent.children.length; index++) {
+        console.log(parent.children[index].innerText)
+        
+    }
+        parent.children[0].style.color='orange'//we can easily access the elements inside the parent element and chamge the properties
+        console.log(parent.firstElementChild)
+        console.log(parent.lastElementChild)
+
+        //CHILD TO PARENT RELATIONSHIP
+        const dayOne=document.querySelector('.DAY')
+        console.log(dayOne)
+        console.log(dayOne.parentElement)//so this gives the parent element with the help of the child element
+        console.log(dayOne.nextElementSibling)//tgis will diaplsy the next sibling  
+        console.log(dayOne.nextElementSibling.style.color = 'green')//this will change the color to green 
+
+
+//creating the elements using the attribute creteelement 
+        const div=document.createElement('div')
+        console.log(div)
+        const heading=document.createElement('h1')
+        console.log(heading)
+
+        //to set the class and id names we can use the set element like below
+
+        div.className='main'
+        div.id='firstId'
+
+        //we can set the other atttributes using the set attributes using the property in the KEY VALUE PAIR 
+
+        div.setAttribute('H1','HEADING')
+
+        //we can style the elements
+
+        div.style.backgroundColor='green'
+
+        //SO ALL THE PROPERTIES FOR THE DIV WILL STORE INT HE MEMORY AND WE NEED TO ATTATCH TO SEE THEM IN THE PAGE
+
+        //we are having 2 ways to add the inner text
+        
+        div.innerText='CHAI AUR CODE'                           //by adding the innertext
+        // const text=document.createTextNode('Chai aur code')  //by creating the text node
+        // div.appendChild(text)
+
+        document.body.appendChild(div)
+    </script>
+</html>
