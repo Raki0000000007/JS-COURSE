@@ -3,7 +3,7 @@
 //2.textContent : returns all text content(if we make the display hidden to span or other attribbute in the text then it will not be visible)
 //3.innerHTML  : gives the text in the selected node(it will disply every content and the other tags that we define )
 
-//ADDING THIDS
+
 
 //adding elements to the html 
 //suppose if we want to add the child li element to the existing parent li then create a function mentioning which element need to add then append the element tot he parent or child as per our requiremtn then call the functon
@@ -23,3 +23,14 @@
 //Array.from() inside the bracket we need to give the element that we need to convert into array so that we can perform the operation 
 
 //CLASSSNAME WILL DEFINE IN THE HTML COLLECTION FORMAT AND THE QUAERYSELECTORALL WILL DEFINE IN THE HTML COLLECTION FORMAT 
+
+//RELATIONS
+//children--->this will returns the child elements inside the parent element
+
+//PARENT TO CHILD 
+//1.FirstElementChild 2.LastElementChild
+
+//CHILD TO PARENT
+//1.(child element variable ).parentElement 2.(child element variable ).nextElementSibling
+
+//CREATING THE ELEMENT using the create element property
