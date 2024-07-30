@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipualtion</title>
+</head>
+<body>
+    <ul class="language">
+        <li>JAVA</li>
+    </ul>
+</body>
+<script>
+    function addlang(lang_name){
+        const li=document.createElement('li')
+        li.innerText=`${lang_name}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addlang('JAVASCRIPT')
+    //SO ABOVE IS THE NORAML WAY OF CREATING THE ELEMENT AND ADDING THEM TO WHERE WE NEED THEM
+
+    //SO BELOW IS THE OPTIMIZED WAY OF CREATING THE ELEMENT AND ADDDING THEM WHERE WE WANT 
+
+
+    function addoptilang(lang_name){
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(lang_name))
+        document.querySelector('.language').appendChild(li)
+    }
+    addoptilang('sql')
+
+
+    ///EDITTING OF THE ELEMENTS
+
+    const sec_ele=document.querySelector('li:nth-child(2)')
+    console.log(sec_ele)                                            //selecting the element
+    const new_sec_ele=document.createElement('li')                  //creating the new element
+    new_sec_ele.appendChild(document.createTextNode('Golang'))     //adding the text
+    sec_ele.replaceWith(new_sec_ele)                                //replacing the elements with the old one   
+
+    //we can edit the elements using the innerhtml and also with the outerhtml
+
+    //REMOVE or DELETE
+    const last_ele=document.querySelector('li:last-child')          //select the element
+    last_ele.remove()                                               //use remove function to remove
+
+</script>
+</html>
