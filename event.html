@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS IN HTML</title>
+</head>
+<body style="background-color: gray; color: white; ">
+    <h1>CLICKS</h1>
+    <div class="content">
+       <ul id="images">
+        <li><img width="200px" id="Cricket" src="rohit.jpg" alt="Rohit"></li>
+        <li><img width="200px" id="Paper" src="papaer.webp" alt="Paper"></li>
+        <li><img width="200px"id="Gotilla" src="RAA.webp" alt="Gotilla"></li>
+        <li><a style="color: blue;" href="https://www.google.com/maps">Maps</a></li>
+       </ul>
+    </div>
+</body>
+<script>
+    //we can add onclick in the html code of the certain images but it is not good idea
+    //also we can use onclick function this is also is not a goo idea s
+    // document.getElementById('Cricket').onclick=function(){
+    //     alert('Clicked')
+    // }
+    //so we can add event listner 
+    //type,timestamp,preventDefault,target,toElement,Screex,screeny,clientY,cliintX,altKey,shiftKey,keyCode
+    
+   
+    // document.getElementById('Cricket').addEventListener('click',function(e){
+    //     alert('Clicked')
+    // })
+    
+     //Event propogatioin (true and false )
+    //1event bubling(will track frominside to outside)false
+    //2event capturing(will track from outside to inside)true
+
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log('clicked inside the UL')
+    },true)
+
+    document.getElementById('Cricket').addEventListener('click',function(e){
+        console.log('clicked Rohit pic')
+    },true)
+
+    //we can add e.stoppropogation to stop the propogation i.e,moving inside or outside the elements
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        // console.log(e.target.parentNode)
+        let remove=e.target.parentNode;
+        remove.remove()
+    })//if you click on gthe google li it will delete all the elments inside the ul because the parent elements for all the images are li but the parent elemrnt for the google is ul so clicking google will delete the entire ul
+   // so to overcome that we can check the id with the if condition like below code
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        // console.log(e.target.parentNode)
+       if(e.target.tagName==='IMG'){
+        console.log(e.target.id)
+        let remove=e.target.parentNode;
+           remove.remove()
+       }
+    })
+
+</script>
+</html>
