@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">ASYNC and SET</h1>
+    <button id="button">Stop</button>
+</body>
+<script>
+    setTimeout(function(){
+        console.log('displaying')
+    },2000)         //will display the log statement after 2 seconds ONCE   
+
+let heading = function(){
+    document.getElementById('heading').innerHTML = 'Best Javascript Course'
+}
+let course=setTimeout(heading,2000)
+
+setTimeout(function(){
+    document.getElementById('button').innerHTML = 'Dont'
+},2000)
+//bothe the ways are correct as we assigned the function to the variable in the first example and in the 2nd one we just defined as it is which is common
+
+//************************* HOW TO STOP SETINTERVALS********************
+//use clearTimeout
+
+document.querySelector('#button').addEventListener('click',function(){
+    clearTimeout(course)
+    console.log('Stoppeed')
+})
+//if you click the stop button before the previous settimeout then the settimeout will be stopped 
+
+//***************************SET INTERVAL***********************************
+//this will start executing after the certain time that we provide and will not stop
+let interval=function(str){            //we can pass the parameter inside the function 
+    console.log(str,Date.now())
+}
+const stop=setInterval(interval,2000,'hi')          //we can include the parameter here to execute 
+
+
+//***************************8HOW TO STOP SET INTERVAL*****************************
+
+clearInterval(stop)
+
+</script>
+</html>
