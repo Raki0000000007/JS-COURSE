@@ -1,0 +1,11 @@
+.class_list{
+    background-color: green;
+}
+/* #id_list{
+    background-color: red;
+} */
+input:focus {
+    border-color: blue;
+    outline: none;
+  }
+  
